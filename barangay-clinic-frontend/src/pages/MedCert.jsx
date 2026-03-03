@@ -10,7 +10,7 @@ const MedCert = () => {
   useEffect(() => {
     const fetchTreatment = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/treatments/${id}`);
+        const res = await axios.get(`https://barangay-clinic.onrender.com/api/treatments/${id}`);
         setTreatment(res.data);
       } catch (err) {
         console.error('Error fetching treatment record:', err);

@@ -21,7 +21,7 @@ const Patients = () => {
   const fetchPatients = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/patients?search=${searchTerm}`,
+        `https://barangay-clinic.onrender.com/api/patients?search=${searchTerm}`,
       );
       setPatients(res.data);
     } catch (err) {
@@ -43,7 +43,7 @@ const Patients = () => {
   const handleAddPatient = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/patients", formData);
+      await axios.post("https://barangay-clinic.onrender.com/api/patients", formData);
       setFormData({
         firstName: "",
         lastName: "",

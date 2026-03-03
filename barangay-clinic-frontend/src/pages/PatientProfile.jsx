@@ -23,13 +23,13 @@ const PatientProfile = () => {
     try {
       // 1. Get Patient Details
       const patientRes = await axios.get(
-        `http://localhost:5000/api/patients/${id}`,
+        `https://barangay-clinic.onrender.com/api/patients/${id}`,
       );
       setPatient(patientRes.data);
 
       // 2. Get their Treatment History
       const historyRes = await axios.get(
-        `http://localhost:5000/api/treatments/patient/${id}`,
+        `https://barangay-clinic.onrender.com/api/treatments/patient/${id}`,
       );
       setHistory(historyRes.data);
     } catch (err) {
@@ -57,7 +57,7 @@ const PatientProfile = () => {
   const handleSaveTreatment = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/treatments", {
+      await axios.post("https://barangay-clinic.onrender.com/api/treatments", {
         ...treatmentForm,
         patientId: id,
       });

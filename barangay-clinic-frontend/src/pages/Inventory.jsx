@@ -13,7 +13,7 @@ const Inventory = () => {
 
   const fetchInventory = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/inventory');
+      const res = await axios.get('https://barangay-clinic.onrender.com/api/inventory');
       setItems(res.data);
     } catch (err) {
       console.error('Error fetching inventory:', err);
@@ -31,7 +31,7 @@ const Inventory = () => {
   const handleAddItem = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/inventory', formData);
+      await axios.post('https://barangay-clinic.onrender.com/api/inventory', formData);
       setFormData({ itemName: '', category: 'Medicine', quantity: '', unit: 'pieces', expirationDate: '' });
       fetchInventory();
     } catch (err) {
@@ -46,7 +46,7 @@ const Inventory = () => {
     if (newQty < 0) return; // Don't allow negative stock
     
     try {
-      await axios.put(`http://localhost:5000/api/inventory/${id}`, { quantity: newQty });
+      await axios.put(`https://barangay-clinic.onrender.com/api/inventory/${id}`, { quantity: newQty });
       fetchInventory();
     } catch (err) {
       console.error('Error updating quantity:', err);
@@ -56,7 +56,7 @@ const Inventory = () => {
   const handleDelete = async (id) => {
     if (!window.confirm('Are you sure you want to delete this item?')) return;
     try {
-      await axios.delete(`http://localhost:5000/api/inventory/${id}`);
+      await axios.delete(`https://barangay-clinic.onrender.com/api/inventory/${id}`);
       fetchInventory();
     } catch (err) {
       console.error('Error deleting item:', err);

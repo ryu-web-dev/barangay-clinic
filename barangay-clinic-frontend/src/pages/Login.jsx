@@ -17,7 +17,7 @@ const Login = () => {
 
     try {
       // Ask the backend if these credentials are correct
-      const response = await axios.post('http://localhost:5000/api/auth/login', {
+      const response = await axios.post('https://barangay-clinic.onrender.com/api/auth/login', {
         username,
         password
       });
