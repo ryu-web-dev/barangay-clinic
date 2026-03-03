@@ -11,9 +11,8 @@ app.use(express.json()); // Allows the server to understand JSON data from forms
 
 // Database Connection
 // Using 127.0.0.1 instead of localhost avoids some common Node.js connection bugs
-const mongoURI = 'mongodb://127.0.0.1:27017/barangay_clinic';
 
-mongoose.connect(mongoURI)
+mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('✅ Connected to Local MongoDB Database'))
   .catch((err) => console.error('❌ Failed to connect to MongoDB:', err));
 
