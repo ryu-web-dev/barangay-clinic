@@ -34,7 +34,7 @@ const MainLayout = ({ children }) => {
         >
           {/* Note: I used a placeholder image. Later, just put your barangay logo in the 'public' folder as 'logo.png' and change src="/logo.png" */}
           <img 
-            src="https://via.placeholder.com/80?text=Logo" 
+            src="logo.png" 
             alt="Barangay Logo" 
             style={{ width: '80px', height: '80px', borderRadius: '50%', marginBottom: '10px', objectFit: 'cover' }} 
           />

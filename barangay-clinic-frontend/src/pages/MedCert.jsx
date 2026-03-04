@@ -28,19 +28,45 @@ const MedCert = () => {
       
       {/* Non-printable Top Bar */}
       <div className="no-print" style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '20px' }}>
-        <button onClick={() => navigate(-1)} style={{ backgroundColor: '#7f8c8d' }}>&larr; Back</button>
-        <button onClick={() => window.print()} className="success">🖨️ Print Certificate</button>
+        <button onClick={() => navigate(-1)} style={{ backgroundColor: '#7f8c8d', padding: '10px 15px', border: 'none', color: 'white', borderRadius: '4px', cursor: 'pointer' }}>&larr; Back</button>
+        <button onClick={() => window.print()} style={{ backgroundColor: '#27ae60', padding: '10px 15px', border: 'none', color: 'white', borderRadius: '4px', cursor: 'pointer' }}>🖨️ Print Certificate</button>
       </div>
 
       {/* --- START OF PRINTABLE CERTIFICATE --- */}
-      <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-        <h3 style={{ margin: 0, textTransform: 'uppercase' }}>Republic of the Philippines</h3>
-        <h4 style={{ margin: 0, fontWeight: 'normal' }}>Province of Rizal</h4>
-        <h4 style={{ margin: 0, fontWeight: 'normal' }}>Municipality of Binangonan</h4>
-        <h2 style={{ marginTop: '10px', color: '#2c3e50' }}>BARANGAY HEALTH CENTER</h2>
+      
+      {/* Official San Nicolas Letterhead */}
+      <div style={{ textAlign: 'center', marginBottom: '20px', position: 'relative', minHeight: '100px' }}>
+        
+        {/* Logo placed on the top left */}
+        <img 
+          src="/logo.png" 
+          alt="San Nicolas Health Center Logo" 
+          style={{ width: '100px', height: '100px', position: 'absolute', left: '0', top: '0', objectFit: 'contain' }} 
+        />
+        
+        <h4 style={{ margin: 0, fontWeight: 'normal' }}>Republic of the Philippines</h4>
+        <h4 style={{ margin: 0, fontWeight: 'normal' }}>City of Pasig</h4>
+        <h4 style={{ margin: 0, fontWeight: 'normal' }}>Barangay San Nicolas</h4>
+        
+        <h2 style={{ marginTop: '10px', color: '#2c3e50', marginBottom: '5px' }}>
+          SAN NICOLAS HEALTH CENTER
+        </h2>
+        
+        <p style={{ margin: 0, fontSize: '13px', fontStyle: 'italic' }}>
+          M.H. Del Pilar Street, Brgy. San Nicolas, Pasig City, Metro Manila
+        </p>
+        <p style={{ margin: 0, fontSize: '12px', color: '#555' }}>
+          (Near San Nicolas Day Care Center, 54 M.H. del Pilar St.)
+        </p>
+        <p style={{ margin: '5px 0 0 0', fontSize: '13px', fontWeight: 'bold', color: '#2980b9' }}>
+          iDOTS Facility for Tuberculosis Services
+        </p>
       </div>
+      
+      {/* Divider Line */}
+      <div style={{ borderBottom: '3px solid #2c3e50', marginBottom: '30px' }}></div>
 
-      <h1 style={{ textAlign: 'center', textDecoration: 'underline', marginBottom: '40px' }}>
+      <h1 style={{ textAlign: 'center', textDecoration: 'underline', marginBottom: '40px', fontSize: '24px' }}>
         MEDICAL CERTIFICATE
       </h1>
 
@@ -51,9 +77,9 @@ const MedCert = () => {
 
         <p><strong>TO WHOM IT MAY CONCERN:</strong></p>
 
-        <p style={{ textIndent: '40px', marginTop: '20px' }}>
+        <p style={{ textIndent: '40px', marginTop: '20px', textAlign: 'justify' }}>
           This is to certify that <strong>{patient.firstName} {patient.lastName}</strong>, 
-          a resident of {patient.address}, was examined and treated at this Barangay Health Center 
+          a resident of {patient.address}, was examined and treated at this Health Center 
           on <strong>{new Date(treatment.visitDate).toLocaleDateString()}</strong>.
         </p>
 
@@ -64,7 +90,7 @@ const MedCert = () => {
           <p><strong>Treatment / Prescription Given:</strong> {treatment.treatmentGiven || 'None'}</p>
         </div>
 
-        <p style={{ textIndent: '40px' }}>
+        <p style={{ textIndent: '40px', textAlign: 'justify' }}>
           This certificate is being issued upon the request of the aforementioned patient for whatever legal purpose it may serve.
         </p>
 
@@ -73,7 +99,7 @@ const MedCert = () => {
             {treatment.attendingStaff}
           </p>
           <p style={{ margin: 0 }}>Attending Health Worker / Physician</p>
-          <p style={{ margin: 0, fontSize: '0.9rem', color: '#7f8c8d' }}>Barangay Health Center</p>
+          <p style={{ margin: 0, fontSize: '0.9rem', color: '#7f8c8d' }}>San Nicolas Health Center</p>
         </div>
       </div>
       {/* --- END OF PRINTABLE CERTIFICATE --- */}
