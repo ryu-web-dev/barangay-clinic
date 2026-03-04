@@ -24,7 +24,7 @@ const MedCert = () => {
   const patient = treatment.patientId; // Populated from our backend!
 
   return (
-    <div style={{ maxWidth: '800px', margin: '0 auto', backgroundColor: 'white', padding: '40px', minHeight: '100vh' }}>
+    <div className="animate-fade-in" style={{ maxWidth: '800px', margin: '0 auto', backgroundColor: 'white', padding: '40px', minHeight: '100vh' }}>
       
       {/* Non-printable Top Bar */}
       <div className="no-print" style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '20px' }}>

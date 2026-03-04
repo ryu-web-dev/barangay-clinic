@@ -64,7 +64,7 @@ const Inventory = () => {
   };
 
   return (
-    <div>
+    <div className="animate-fade-in" >
       <h2 style={{ marginBottom: '20px' }}>Inventory Management</h2>
 
       {/* Add New Item Form */}
@@ -138,6 +138,7 @@ const Inventory = () => {
           </tbody>
         </table>
       </div>
+      
     </div>
   );
 };

@@ -37,7 +37,7 @@ const Login = () => {
 
   // We add a little inline styling to center the login box nicely
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', backgroundColor: '#2c3e50' }}>
+    <div className="animate-fade-in" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', backgroundColor: '#2c3e50' }}>
       <div className="card" style={{ width: '350px', textAlign: 'center' }}>
         <h2 style={{ marginBottom: '5px' }}>Health Center</h2>
         <p style={{ marginBottom: '20px', fontSize: '0.9rem', color: '#7f8c8d' }}>Staff Login Portal</p>

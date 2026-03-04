@@ -60,7 +60,7 @@ const Patients = () => {
   };
 
   return (
-    <div>
+    <div className="animate-fade-in">
       <div
         style={{
           display: "flex",

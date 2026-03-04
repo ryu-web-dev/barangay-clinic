@@ -80,7 +80,7 @@ const PatientProfile = () => {
   if (!patient) return <p>Loading patient data...</p>;
 
   return (
-    <div>
+    <div className="animate-fade-in">
       <button
         onClick={() => navigate("/patients")}
         style={{ marginBottom: "15px", backgroundColor: "#7f8c8d" }}
